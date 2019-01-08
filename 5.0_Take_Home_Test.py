@@ -1,25 +1,30 @@
 '''
 HONOR CODE: I solemnly promise that while taking this test I will only use PyCharm or the Internet,
-but I will definitely not ask another person except the instructor. Signed: ______________________
+but I will definitely not ask another person except the instructor. Signed: Alexander Randall
 
 
 1. Write a Python program that will use a FOR loop to print your name
      10 times, and then the word Done at the end.
  '''  
-
+for i in range(10):
+    print("Alex ;)")
+print("Done")
 
 '''
   2. Write a Python program that will use a FOR loop to print Blue
      and then White 20 times. (Blue White Blue White Blue White... all on separate lines.
      Don't use \n.)
 '''
-
+for i in range(20):
+    print("Blue")
+    print("White")
 
 '''
   3. Write a Python program that will use a FOR loop to print the even
      numbers from 2 to 100, inclusive.
 '''
-
+for i in range(1,51):
+    print(i*2)
 
 
 '''
