@@ -11,6 +11,16 @@ When the user quits print a win/loss record
 
 '''
 
+import random
+a = random.randrange(1,4)
+quit = "n"
+while quit == "n":
+    if a == 1:
+        print("Rock")
+    elif a == 2:
+        print("Paper")
+    elif a == 3:
+        print("Scissors")
 
 
 
