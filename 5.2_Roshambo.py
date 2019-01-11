@@ -12,8 +12,12 @@ When the user quits print a win/loss record
 '''
 
 import random
-quit = "n"
-while quit == "n":
+quit = False
+player_score = 0
+ai_score = 0
+endingloop = False
+while quit == False:
+    endingloop = False # Makes sure the loop is on at the end
     answer = input("Rock, Paper, or Scissors? Or Random? \n\r")
     if answer.lower() == "random": #Random generator
         answer = random.randrange(1,4)
@@ -31,22 +35,29 @@ while quit == "n":
     elif a == 3:
         a = "Scissors"
     print(answer,"vs.",a )
-    if answer.lower() == "rock" and a.lower() == "rock": #Checks both answers to see who wins
+    if answer.lower() == a.lower(): #Checks both answers to see who wins
         print("Tie")
-    elif answer.lower() == "scissors" and a.lower() == "scissors":
-        print ("Tie")
-    quit = input("Would you like to quit? \n\r")
-    if quit.lower() == ("no"):
-        quit = "n"
-    elif quit.lower() == ("yes"):
-        quit = "y"
-
-
-
-
-
-
-
-
-
-
+    elif answer.lower() == "scissors" and a.lower() == "paper":
+        player_score += 1
+        print("You won!")
+    elif answer.lower() == "paper" and a.lower() == "rock":
+        player_score += 1
+        print("You won!")
+    elif answer.lower() == "rock" and a.lower() == "scissors":
+        player_score += 1
+        print("You won!")
+    else:
+        ai_score += 1
+        print("You lost :(")
+    while endingloop == False: # Makes a loop incase the player puts a random term as an answer
+        quit = input("Would you like to quit? \n\r")
+        if quit.lower() == ("no"):
+            quit = False
+            endingloop = True
+        elif quit.lower() == ("yes"):
+            quit = True
+            endingloop = True
+            print("You won",player_score,"times")
+            print("You lost ",ai_score,"times")
+        else:
+            print("Yes or No")
