@@ -18,7 +18,8 @@ ai_score = 0
 endingloop = False
 while quit == False:
     endingloop = False # Makes sure the loop is on at the end
-    answer = input("Rock, Paper, or Scissors? Or Random? \n\r")
+    print("1: Rock \n\r2: Paper \n\r3: Scissors \n\r4: Random")
+    answer = input()
     if answer.lower() == "random": #Random generator
         answer = random.randrange(1,4)
         if answer == 1:
@@ -59,5 +60,3 @@ while quit == False:
             endingloop = True
             print("You won",player_score,"times")
             print("You lost ",ai_score,"times")
-        else:
-            print("Yes or No")

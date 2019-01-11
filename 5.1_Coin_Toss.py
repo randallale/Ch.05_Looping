@@ -18,11 +18,3 @@ for i in range(50):
         print("Tails!")
         tails += 1
 print(heads,"Heads!",tails,"Tails!")
-
-
-
-
-
-
-
-
