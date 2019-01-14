@@ -9,12 +9,18 @@ COIN TOSS PROGRAM
 import random
 heads = 0
 tails = 0
-for i in range(50):
+times = 0
+start = True
+number = 0
+while start == True:
+    times += 1
+    print(times)
     number = random.randrange(2)
     if number == 0:
-        print("Heads!")
         heads += 1
+        number += 1
     else:
-        print("Tails!")
         tails += 1
-print(heads,"Heads!",tails,"Tails!")
+    if number >= 20:
+        start = False
+        print(times)
