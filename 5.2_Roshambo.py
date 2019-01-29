@@ -10,19 +10,22 @@ Add conditional statements to figure out who wins and keep the records
 When the user quits print a win/loss record
 
 '''
-
 import random
 quit = False
 player_score = 0
 ai_score = 0
-endingloop = False
 while quit == False:
-    endingloop = False # Makes sure the loop is on at the end
-    print("1: Rock \n\r2: Paper \n\r3: Scissors \n\r4: Random")
+    print("1: Rock \n\r2: Paper \n\r3: Scissors \n\r4: Random\n\r5: Check Score \n\r6: Quit Game")
     answer = int(input())
+    a = random.randrange(1, 4)  # Makes other "player's" choice
     if answer == 4: #Random generator
         answer = random.randrange(1,4)
-    a = random.randrange(1,4) # Makes other "player's" choice
+    elif answer == 5:
+        print("You won",player_score,"times")
+        print("You lost",ai_score,"times")
+        continue
+    elif answer == 6:
+        break
     if answer == 1:
         answer = "Rock"
     elif answer == 2:
@@ -50,13 +53,3 @@ while quit == False:
     else:
         ai_score += 1
         print("You lost :(")
-    while endingloop == False: # Makes a loop incase the player puts a random term as an answer
-        quit = input("Would you like to quit? \n\r")
-        if quit.lower() == ("no"):
-            quit = False
-            endingloop = True
-        elif quit.lower() == ("yes"):
-            quit = True
-            endingloop = True
-            print("You won",player_score,"times")
-            print("You lost",ai_score,"times")
