@@ -32,7 +32,14 @@ for i in range(1,51):
      10 down to, and including, 0. Then print the words Blast off! Remember, use
      a WHILE loop, don't use a FOR loop.
 '''
-
+number = 10
+while True:
+    print(number)
+    number -= 1
+    if number == -1:
+        print("Blast off!")
+        break
+        #Or I could set a variable to the while loop and set it to false after the if statement
 
 '''
   5. There are three things wrong with this program. List each.
@@ -45,18 +52,22 @@ for i in range(1,51):
          total = total + i
      print("The total is:", x)
 '''
-
-
+#1: X needs to be an integer so you need to do int(input("Enter a number: "))
+#2: total = total + i is not wrong but you could do += instead
+#3: Instead of the i in the total = total + i you would need to use the x variable
 '''
   6. Write a program that prints a random integer from 1 to 10 (inclusive).
 '''
-
+import random
+print(random.randrange(1,11))
 
 '''
   7. Write a program that prints a random floating point number somewhere between
      1 and 10 (inclusive). Do not make the mistake of generating a random number from
      0 to 10 instead of 1 to 10.
 '''
+import random
+print(random.random()*10+1)
 
 
 '''
@@ -69,3 +80,20 @@ for i in range(1,51):
      if statements.
       
 '''
+number = 0
+positive = 0
+negative = 0
+zero = 0
+for i in range(7):
+    x = int(input("Enter a number: "))
+    number += x
+    if x > 0:
+        positive += 1
+    elif x < 0:
+        negative += 1
+    else:
+        zero += 1
+print("The sum is",number)
+print("You had",positive,"positive numbers.")
+print("You had",negative,"negative numbers.")
+print("You had",zero,"zeros.")
