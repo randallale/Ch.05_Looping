@@ -34,7 +34,8 @@ if instructions == 1: #Are instructions
     print("The object is to travel 200 Solar Systems across the Galaxy to Hoth.")
     print("A Imperial Starfleet will be chasing you.")
     print("You will be asked for commands every so often.")
-while not reset_loop:
+while True: #Loop for entire reset
+    reset_loop = False
     done = False
     miles_traveled = 0
     thirst = 0
@@ -57,11 +58,8 @@ while not reset_loop:
 
         if user_choice.upper() == "Q": #Main if statements
             print("Do.")
-            time.sleep(1)
             print("Or do not.")
-            time.sleep(1)
             print("There is no try.")
-            time.sleep(1)
             break
         elif user_choice.upper() == "E":
             print("Solar systems traveled: ",miles_traveled)
@@ -102,7 +100,7 @@ while not reset_loop:
             print("You died of thirst")
             print("Ive never been a bad boy")
             break
-        elif thirst > 4 and not natives_traveled >= miles_traveled and not camel_tiredness > 8:
+        elif thirst > 4 and not natives_traveled >= miles_traveled and not camel_tiredness > 8 and not miles_traveled >= 200:
             print("You are thirsty for some green milk.")
 
         if camel_tiredness > 8 and not thirst > 6:
@@ -110,7 +108,7 @@ while not reset_loop:
             print("That's not how the Force works!")
             break
 
-        elif camel_tiredness > 5 and not thirst > 6 and not natives_traveled >= miles_traveled:
+        elif camel_tiredness > 5 and not thirst > 6 and not natives_traveled >= miles_traveled and not miles_traveled >= 200:
             print("The Millennium Falcon's hyperdrive is starting to go bad")
 
         if natives_traveled >= miles_traveled and not miles_traveled >= 200:
@@ -130,10 +128,13 @@ while not reset_loop:
             thirst = 0
             camel_tiredness = 0
     time.sleep(2)
-    print("Would you like to play again?")
-    print("A: Yes")
-    reset = input("B: No\n")
-    if reset.upper() == "A":
-        continue
-    else:
-        break
+    while not reset_loop: #Loop for quitting/Accidently putting in a bad string/integer
+        print("Would you like to play again?")
+        print("A: Yes")
+        reset = input("B: No\n")
+        if reset.upper() == "A":
+            reset_loop = True
+        elif reset.upper() =="B":
+            print("Goodbye for real this time.")
+            quit()
+
