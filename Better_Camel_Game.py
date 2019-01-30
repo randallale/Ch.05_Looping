@@ -71,12 +71,14 @@ while not done: #Main loop
 
     if thirst > 6:
         print("You died of thirst")
+        print("Ive never been a bad boy")
         break
     elif thirst > 4 and not natives_traveled >= miles_traveled and not camel_tiredness > 8:
         print("You are thirsty for some green milk.")
 
     if camel_tiredness > 8 and not thirst > 6:
         print("The Millennium Falcon was destroyed")
+        print("That's not how the Force works!")
         break
 
     elif camel_tiredness > 5 and not thirst > 6 and not natives_traveled >= miles_traveled:
@@ -84,15 +86,17 @@ while not done: #Main loop
 
     if natives_traveled >= miles_traveled and not miles_traveled >= 200:
         print("The Imperials caught you!")
+        print("Marching into a detention area is not what I had in mind.")
         break
     elif miles_traveled >= 200:
         print("You won the game!")
+        print("Chewie, we're home.")
         break
     elif natives_traveled >= (miles_traveled-15):
         print("The Imperials are close!")
 
     if random.randrange(1,21) == 1:
-        print("You a Cantina!")
+        print("You found a Cantina!")
         drinks = 6
         thirst = 0
         camel_tiredness = 0
