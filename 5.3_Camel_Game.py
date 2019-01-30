@@ -36,12 +36,14 @@ while not done: #Main loop
     elif user_choice.upper() == "E":
         print("Miles Traveled: ",miles_traveled)
         print("Drinks in canteen: ",drinks)
-        print("The natives are",((natives_traveled)*-1),"miles behind you")
+        print("The natives are",(miles_traveled-natives_traveled),"miles behind you")
 
     elif user_choice.upper() == "D":
         camel_tiredness = 0
-        print("You're camel is happy")
         natives_traveled += random.randrange(7,15)
+        if not natives_traveled >= miles_traveled:
+            print("Your camel is happy")
+
 
     elif user_choice.upper() == "C":
         miles_traveled += random.randrange(10,21)
@@ -52,7 +54,7 @@ while not done: #Main loop
 
     elif user_choice.upper() == "B":
         miles_traveled += random.randrange(5,13)
-        print(miles_traveled)
+        print("You have traveled",miles_traveled,"miles")
         thirst += 1
         camel_tiredness += 1
         natives_traveled += random.randrange(7, 15)
@@ -68,26 +70,25 @@ while not done: #Main loop
 
     if thirst > 6:
         print("You died of thirst :(")
-        done = True
-    elif thirst > 4:
+        break
+    elif thirst > 4 and not natives_traveled >= miles_traveled and not camel_tiredness > 8:
         print("You are thirsty.")
 
     if camel_tiredness > 8 and not thirst > 6:
         print("Your camel is dead.")
+        break
 
-    elif camel_tiredness > 5 and not thirst > 6:
+    elif camel_tiredness > 5 and not thirst > 6 and not natives_traveled >= miles_traveled:
         print("Your camel is getting tired")
 
     if natives_traveled >= miles_traveled:
         print("The natives caught you!")
         break
-
-    elif natives_traveled < 15:
-        print("The natives are getting close!")
-
-    if miles_traveled >= 200:
+    elif miles_traveled >= 200:
         print("You won the game!")
         break
+    elif natives_traveled >= (miles_traveled-15):
+        print("The natives are getting close!")
 
     if random.randrange(1,21) == 1:
         print("You found an oasis!")
