@@ -71,14 +71,14 @@ while not done: #Main loop
     if thirst > 6:
         print("You died of thirst :(")
         break
-    elif thirst > 4 and not natives_traveled >= miles_traveled and not camel_tiredness > 8:
+    elif thirst > 4 and not natives_traveled >= miles_traveled and not camel_tiredness > 8 and not miles_traveled >= 200:
         print("You are thirsty.")
 
     if camel_tiredness > 8 and not thirst > 6:
         print("Your camel is dead.")
         break
 
-    elif camel_tiredness > 5 and not thirst > 6 and not natives_traveled >= miles_traveled:
+    elif camel_tiredness > 5 and not thirst > 6 and not natives_traveled >= miles_traveled and not miles_traveled >= 200:
         print("Your camel is getting tired")
 
     if natives_traveled >= miles_traveled and not miles_traveled >= 200:
