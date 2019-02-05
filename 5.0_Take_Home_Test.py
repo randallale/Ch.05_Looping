@@ -41,7 +41,7 @@ while True:
         break
         #Or I could set a variable to the while loop and set it to false after the if statement
 
-''' INCORRECT. This program is not printing the total.
+''' 
   5. There are three things wrong with this program. List each.
      
      print("This program takes three numbers and returns the sum.")
@@ -53,7 +53,7 @@ while True:
      print("The total is:", x)
 '''
 #1: X needs to be an integer so you need to do int(input("Enter a number: "))
-#2: 
+#2: X at the end needs to be the variable total
 #3: Instead of the i in the total = total + i you would need to use the x variable
 '''
   6. Write a program that prints a random integer from 1 to 10 (inclusive).
@@ -67,7 +67,7 @@ print(random.randrange(1,11))
      0 to 10 instead of 1 to 10.
 '''
 import random
-print(random.random()*10+1) # 1-11 You need 1-10
+print(random.random()*10)
 
 
 '''
